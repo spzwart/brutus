@@ -1,6 +1,6 @@
 ###################################################################
 # Adjust path to mpreal.h file
-MPRDIR  = /home/arend/Projects/mpreal/
+MPRDIR  = .
 ###################################################################
 LIB     = ./lib/
 MPLIB   = ./mplib/
