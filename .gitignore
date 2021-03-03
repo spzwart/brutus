@@ -1,0 +1,7 @@
+PN.order
+*.o
+*.diag
+*.log
+*.txt
+*.out
+main.exe
