@@ -17,7 +17,8 @@ DIRINIT = $(LIB)Initializer/
 DIRPRO  = $(LIB)Products/
 DIRDEL  = $(MPLIB)Delta/
 ###################################################################
-COMP = g++
+#COMP = g++
+COMP = $(DIRMPI)mpicxx
 CFLAGS = -O3 -std=c++11
 CC  = $(COMP) $(CFLAGS) -c
 CO  = $(COMP) $(CFLAGS) -o
