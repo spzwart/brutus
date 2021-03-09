@@ -75,7 +75,10 @@ void Cluster::updateVelocities(mpreal dt) {
             si->v[k] = si->vp[k] + si->a[k]*dt;
       
             if (si->v[k] > cl) {
-                cout << "Error: v/cl > 1! Nice try guy ;)" << endl;
+                cout << "Error: v/cl ="
+					 << si->v[k]/cl
+					 << " > 1! Nice try guy ;)"
+					 << endl;
                 exit(1);
             }
         }
