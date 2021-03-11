@@ -178,11 +178,10 @@ void Acceleration::Acceleration_PN3(array<mpreal, 3> &da, array<mpreal, 3> &dr, 
         mj*mj/(Rij*Rij)*("2"*vni*vnj - vni*vni + "21.5"*vnj*vnj + "18"*viInvj - "9"*vj2) +
         mi*mj/(Rij*Rij)*("51.875"*vni*vni - "93.75"*vni*vnj + "139.125"*vnj*vnj - "9.609375"*pi*pi*vijn*vijn + "18"*vi2 + "1.921875"*pi*pi*dvij2 +
             "33"*viInvj - "16.5"*vj2) +
-        mi*mi/(Rij*Rij)*("-258.625"*vni*vni + "543"*vni*vnj - "234.75"*vnj*vnj + "58.875"*vi2 - "89.25"*viInvj*vnj - "234.75"*vnj*vnj +
-            "58.875"*vi2 - "89.25"*vj2) +
+        mi*mi/(Rij*Rij)*("-258.625"*vni*vni + "543"*vni*vnj - "234.75"*vnj*vnj + "58.875"*vi2 - "89.25"*viInvj + "44.625"*vj2) +
             ("16"*mj*mj*mj + mi*mi*mj*("547" - "123"*pi*pi/"16")/"3" - "13"*mi*mi*mi/"12" + mi*mj*mj*("545" - "123"*pi*pi/"16")/"3")*apreij);
         
-    factor3v = c2*c2*c2*mj/(Rij*Rij)*("7.5"*vni*vnj*vnj*vnj*vnj*vnj - "5.625"*vnj*vnj*vnj*vnj*vnj - "1.5"*vnj*vnj*vnj*vi2 +
+    factor3v = c2*c2*c2*mj/(Rij*Rij)*("7.5"*vni*vnj*vnj*vnj*vnj - "5.625"*vnj*vnj*vnj*vnj*vnj - "1.5"*vnj*vnj*vnj*vi2 +
             "6"*vni*vnj*vnj*viInvj - "6"*vnj*vnj*vnj*viInvj - "2"*vnj*viInvj*viInvj - "12"*vni*vnj*vnj*vj2 + "12"*vnj*vnj*vnj*vj2 +
             vnj*vi2*vj2 - "4"*vni*viInvj*vj2 + "8"*vnj*viInvj*vj2 + "4"*vni*vj2*vj2 - "7"*vnj*vj2*vj2 +
         mj/Rij*("-2"*vni*vni*vnj + "8"*vni*vnj*vnj + "2"*vnj*vnj*vnj + "2"*vni*viInvj + "4"*vnj*viInvj - "2"*vni*vj2 - "4"*vnj*vj2) +
