@@ -37,6 +37,7 @@ class Brutus {
   void setup(int nmax);
 
   void evolve(mpreal t_end);
+  void reverse_velocities();
 
   mpreal get_t();
   vector<mpreal> get_data();
