@@ -100,6 +100,15 @@ void Brutus::evolve(mpreal t_end) {
   this->data = cl.get_data();
 }
 
+void Brutus::reverse_velocities() {
+    int N = cl.s.size();
+    for(int i=0; i<N; i++) {
+        for(int k=0; k<3; k++) {
+            cl.s[i].v[k] *= "-1";
+        }
+    }
+}
+
 mpreal Brutus::get_t() {
   return t;
 }
