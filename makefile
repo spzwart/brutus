@@ -24,13 +24,20 @@ CC  = $(COMP) $(CFLAGS) -c
 CO  = $(COMP) $(CFLAGS) -o
 ###################################################################
 EXE = main.exe
-all: $(EXE)
+EXEREV = main_rev.exe
+all: $(EXE) $(EXEREV)
 ###################################################################
 main.exe: main.o Brutus.o Bulirsch_Stoer.o Cluster.o Acceleration.o Star.o Delta.o Products.o Initializer.o Diagnostics.o Tools.o Random.o mtrand.o Data_Handler.o Timer.o  
 	$(CO) main.exe main.o Brutus.o Bulirsch_Stoer.o Cluster.o Acceleration.o Star.o Delta.o Products.o Initializer.o Diagnostics.o Tools.o Random.o mtrand.o Data_Handler.o Timer.o  -lmpfr -lgmp
 ###################################################################
+main_rev.exe: main_rev.o Brutus.o Bulirsch_Stoer.o Cluster.o Acceleration.o Star.o Delta.o Products.o Initializer.o Diagnostics.o Tools.o Random.o mtrand.o Data_Handler.o Timer.o  
+	$(CO) main_rev.exe main_rev.o Brutus.o Bulirsch_Stoer.o Cluster.o Acceleration.o Star.o Delta.o Products.o Initializer.o Diagnostics.o Tools.o Random.o mtrand.o Data_Handler.o Timer.o  -lmpfr -lgmp
+###################################################################
 main.o: main.cpp Brutus.o Bulirsch_Stoer.o Cluster.o Acceleration.o Star.o Delta.o Products.o Initializer.o Diagnostics.o Tools.o Random.o mtrand.o Data_Handler.o Timer.o  
 	$(CC) main.cpp -I$(MPRDIR) -I$(DIRTIM) -I$(DIRDH) -I$(DIRRAN) -I$(DIRDIA) -I$(DIRINIT) -I$(DIRPRO) -I$(DIRDEL) -I$(DIRTOO)
+###################################################################
+main_rev.o: main_rev.cpp Brutus.o Bulirsch_Stoer.o Cluster.o Acceleration.o Star.o Delta.o Products.o Initializer.o Diagnostics.o Tools.o Random.o mtrand.o Data_Handler.o Timer.o  
+	$(CC) main_rev.cpp -I$(MPRDIR) -I$(DIRTIM) -I$(DIRDH) -I$(DIRRAN) -I$(DIRDIA) -I$(DIRINIT) -I$(DIRPRO) -I$(DIRDEL) -I$(DIRTOO)
 ###################################################################
 Brutus.o: Brutus.h Brutus.cpp Bulirsch_Stoer.o Cluster.o Acceleration.o Star.o Timer.o
 	$(CC) Brutus.cpp -I$(MPRDIR) -I$(DIRTIM)
