@@ -21,7 +21,9 @@ m2 x2 y2 z2 vx2 vy2 vz2
 
 See example in solar_system_ito.ic
 
-  2) in terminal run: ./main.exe file_out t_begin t_end dt eta e Lw nmax N file file_in 
+  2) in terminal run: ./main.exe file_out t_begin t_end dt eta e Lw nmax N file file_in
+  3) if you want to run the smulation and reverse velocities halfway to check time-reversibility, 
+  run: ./main_rev.exe file_out t_begin t_end dt eta e Lw nmax N file file_in
 
 file_out = output file for snapshots
 t_begin  = begin time
