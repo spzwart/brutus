@@ -23,7 +23,7 @@ public:
     Star(mpreal m, array<mpreal, 3> r, array<mpreal, 3> v);
   
     friend bool operator== (const Star &si, const Star &sj) {
-        if(si.r[0] == sj.r[0] && si.v[0] == sj.v[0])
+        if(si.r[0] == sj.r[0] && si.r[1] == sj.r[1] && si.r[2] == sj.r[2])
             return true;
         else
             return false;
