@@ -45,6 +45,7 @@ class Brutus {
   vector<string> get_data_string();
   
   mpreal get_energy();
+  vector<mpreal> get_Ener();
   vector<mpreal> get_acc(int i);
 };
 
