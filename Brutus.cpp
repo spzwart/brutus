@@ -141,6 +141,11 @@ mpreal Brutus::get_energy() {
     return energy;
 }
 
+vector<mpreal> Brutus::get_Ener() {
+    vector<mpreal> Ener = cl.get_Ener();
+    return Ener;
+}
+
 vector<mpreal> Brutus::get_acc(int i) {
     int N = cl.s.size();
     
