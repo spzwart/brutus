@@ -180,7 +180,6 @@ mpreal Cluster::energies() {
     mpreal E3 = "0";
   
     mpreal Ekini = "0";
-    mpreal Epoti = "0";
     mpreal E     = "0";
     
     mpreal dr2   = "0";
@@ -191,6 +190,7 @@ mpreal Cluster::energies() {
     array<mpreal, 3> da;
 
     for (vector<Star>::iterator si = s.begin(); si != s.end(); ++si) {
+        si->ener = "0";
         mpreal Epotj = "0";
         vi2 = "0";
         array<mpreal, 3> vj;
@@ -201,7 +201,8 @@ mpreal Cluster::energies() {
         }
         mi = si->m;
         
-        Ekini += "0.5"*mi*vi2;
+        Ekini = "0.5"*mi*vi2;
+        si->ener += Ekini;
     
         for (vector<Star>::iterator sj = s.begin(); sj != s.end(); ++sj) {
             if(sj == si) continue;
@@ -226,11 +227,22 @@ mpreal Cluster::energies() {
             
             Epotj = (E0 + E1 + E2 + E3);
             
-            Epoti += Epotj;
+            E += Epotj;
+            si->ener += Epotj;
         }
+        E += Ekini;
     }
-    E = (Ekini + Epoti);
     return E;
+}
+
+// Function that returns a vector with the individual energies
+vector<mpreal> Cluster::get_Ener() {
+    vector<mpreal> Ener;
+    
+    for (vector<Star>::iterator si = s.begin(); si != s.end(); ++si) {
+        Ener.push_back(si->ener);
+    }
+    return Ener;
 }
 
 vector<double> Cluster::get_data_double() {
