@@ -36,6 +36,7 @@ public:
     mpreal e2(int N);
     mpreal e3(int N);
     mpreal energies();
+    vector<mpreal> get_Ener();
 };
 
 #endif
