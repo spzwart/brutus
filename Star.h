@@ -12,6 +12,7 @@ using namespace mpfr;
 class Star {
 public:
     mpreal m;
+    mpreal ener;
     array<mpreal, 3> r;
     array<mpreal, 3> v;
     array<mpreal, 3> a;
