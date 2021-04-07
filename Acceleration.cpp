@@ -38,13 +38,6 @@ void Acceleration::set_PN() {
     PN3     = stoi(PN[4]);
     PN3_5   = stoi(PN[5]);
 }
-    
-// Newtonian PN=0
-void Acceleration::Acceleration_PN0(array<mpreal, 3> &da, array<mpreal, 3> &dr) {
-    for(int k=0; k<3; k++) {
-        da[k] += -mj * apreij * dr[k];
-    }
-}
 
 // Setting some handy parameters for the PN terms. Used also in Cluster::energies()
 void Acceleration::set_PN_prod(array<mpreal, 3> &vj, array<mpreal, 3> &vi, array<mpreal, 3> &dv, array<mpreal, 3> &dr) {
@@ -280,6 +273,7 @@ void Acceleration::calcAcceleration() {
             if (PN3_5)  Acceleration_PN3_5(da, dr, dv);
 
             for(int k=0; k<3; k++) {
+                da[k] -= mj*apreij*dr[k];
                 si->a[k] += da[k];
             }
         }
@@ -344,6 +338,7 @@ void Acceleration::calcAcceleration_dt() {
             
             da2 = "0";
             for(int k=0; k<3; k++) {
+                da[k]    -= mj*apreij*dr[k];
                 si->a[k] += da[k];
                 da2      += da[k]*da[k];
             }
