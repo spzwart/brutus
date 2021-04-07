@@ -41,7 +41,6 @@ public:
     void set_PN();
     void set_cl();
 
-    void Acceleration_PN0(array<mpreal, 3> &da, array<mpreal, 3> &dr);
     void Acceleration_PN1_pair(array<mpreal, 3> &da, array<mpreal, 3> &dr, array<mpreal, 3> &dv, array<mpreal, 3> &vj);
     void Acceleration_PN1_cross(const Star &si, const Star &sj, array<mpreal, 3> &da, array<mpreal, 3> &dr);
     void Acceleration_PN2(array<mpreal, 3> &da, array<mpreal, 3> &dr, array<mpreal, 3> &dv);
