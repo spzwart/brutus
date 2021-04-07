@@ -260,8 +260,6 @@ void Acceleration::calcAcceleration() {
 
             Rij = sqrt(dr2 + eps2);
             apreij = "1"/(Rij*Rij*Rij);
-            // Newtonian = on per default
-            Acceleration_PN0(da, dr);
 
             set_PN_prod(vj, vi, dv, dr);
 
@@ -324,8 +322,6 @@ void Acceleration::calcAcceleration_dt() {
 
             Rij = sqrt(dr2 + eps2);
             apreij = "1"/(Rij*Rij*Rij);
-            // Newtonian = on per default
-            Acceleration_PN0(da, dr);
 
             set_PN_prod(vj, vi, dv, dr);
 
