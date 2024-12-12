@@ -45,7 +45,7 @@ N        = number of objects in the initial condition file
 file     = tell Brutus we are reading the initial condition from a file
 file_in  = text file holding the initial condition
 
-Example: ./brutus_GRX outfile 0 100 1.0 0.10 1e-6 56 64 10 file solar_system_ito.ic
+Example: ./brutus_GRX outfile 0 100 1.0 0.10 1e-6 56 64 10 file inputs/peters.in
 
 This produces outfile.diag with all the snapshots, and outfile.log with some summarizing log data.
 
