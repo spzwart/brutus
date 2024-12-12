@@ -411,7 +411,10 @@ double Initializer::get_random_eccentricity() {
     if(p < p_accept) {
       return trial;
     }
-  } 
+  }
+  cerr << "Should have returbed in look, rather than returning nothing ";
+  cerr << "in Initializer::get_random_eccentricity" << endl;
+  exit(1);
 }
 
 void Initializer::add_random_perturbation(vector<double> &data, double magnitude) {
@@ -497,6 +500,7 @@ vector<double> Initializer::get_circle(double m_ratio) {
   data.push_back(0);
 
   centralize(data);
+  return data;
 }
 vector<double> Initializer::get_binary() {
   vector<double> data;
@@ -2399,6 +2403,7 @@ vector<double> Initializer::get_cold_plummer(int N, int seed, int pivot, int ind
 vector<double> Initializer::get_democratic_plummer(int N, int seed, int pivot, int index) {
   double tolerance = 1.0/N; 
   bool accept = false;
+  vector<double> data = get_plummer(N, seed, pivot, index);
   while(!accept) {
     vector<double> data = get_plummer(N, seed, pivot, index);
     double drmin = 1e100;
@@ -2416,6 +2421,7 @@ vector<double> Initializer::get_democratic_plummer(int N, int seed, int pivot, i
     if(drmin > tolerance) return data;
     seed++;
   }
+  return data;
 }
 vector<double> Initializer::get_democratic_cold_plummer(int N, int seed, int pivot, int index) {
   vector<double> data = get_democratic_plummer(N, seed, pivot, index);

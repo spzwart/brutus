@@ -1,5 +1,13 @@
-# BRUTUS
-- Arbitrary-precision libraries:
+# Brutus_GRX
+
+Brutus_GRX is an N-body code with arbitrary precision and accuracy.
+The extension "GRX" indicates that it includes support from general relativity, including the cross terms.
+
+Brutus was written as part of the PhD thesis of Tjarda Boekholt <tjardaboekholt@gmail.com>
+under the supervision of Simon Portegies Zwart <spz@astronomy.nl> at Leiden Observatory of Leiden University.
+The GRX version is written by Aarend Moerman, as part of his Masters research project at Leiden Observatory
+under the supervision of Tjarda Boekholt and Simon Portegies Zwart.
+
 
   gmp		: https://gmplib.org/
   mpfr		: http://www.mpfr.org/
@@ -37,7 +45,7 @@ N        = number of objects in the initial condition file
 file     = tell Brutus we are reading the initial condition from a file
 file_in  = text file holding the initial condition
 
-Example: ./main.exe outfile 0 100 1.0 0.10 1e-6 56 64 10 file solar_system_ito.ic
+Example: ./brutus_GRX outfile 0 100 1.0 0.10 1e-6 56 64 10 file solar_system_ito.ic
 
 This produces outfile.diag with all the snapshots, and outfile.log with some summarizing log data.
 
